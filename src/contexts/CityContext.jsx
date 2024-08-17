@@ -49,7 +49,7 @@ function CitiesProvider({ children }) {
         body: JSON.stringify(city)
       });
       const data = await res.json();
-      setCities((cities) => ([...cities, data]));
+      setCities(cities => [...cities, data]);
       setCurrentCity(data);
     } catch (error) {
       console.log(error.message);
