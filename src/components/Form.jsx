@@ -32,6 +32,7 @@ function Form() {
   const [emoji, setEmoji] = useState(); 
 
   useEffect(function () {
+    if (!lat || !lng) return;
     const fetchCityData = async function () {
       try {
         setIsLoadingGeocoding(true);
@@ -58,6 +59,10 @@ function Form() {
 
   if (isLoadingGeocoding) {
     return <Spinner />
+  }
+
+  if (!lat || !lng) {
+    return <Message message="Start by clicking somewhere on the map" />
   }
 
   if (geocodingError) {
