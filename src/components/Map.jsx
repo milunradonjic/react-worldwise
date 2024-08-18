@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Map.module.css'
 import Button from './Button';
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from 'react-leaflet';
 import { useCities } from '../contexts/CityContext';
 import { useGeolocation } from '../hooks/useGeolocation';
