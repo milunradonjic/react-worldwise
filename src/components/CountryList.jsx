@@ -17,7 +17,7 @@ export default function CountryList() {
   }
 
   const countries = cities.reduce((countries, city) => {
-    if (!countries.includes(city.country)) {
+    if (!countries.find(country => country.country === city.country)) {
       countries.push({ country: city.country, emoji: city.emoji })
     }
     return countries
